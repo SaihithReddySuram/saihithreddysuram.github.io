@@ -20,7 +20,7 @@ body {
 
 .profile-pic {
     width: auto;
-    height: 637px; /* ~6.65 inches at 96 DPI */
+    height: 437px; /* ~6.65 inches at 96 DPI */
     object-fit: cover;
     border-radius: 20px;
     border: 6px solid #f7c6b5;
