@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('images/background.png'); /* Update the image name if needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.button-container button {
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f7c6b5;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #e09b88;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    margin-bottom: 15px;
+    color: #5c3d2e;
+}
+
+section p {
+    line-height: 1.6;
+}
+
+.headshot {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.headshot img {
+    width: 150px; /* adjust size as you want */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f7c6b5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
