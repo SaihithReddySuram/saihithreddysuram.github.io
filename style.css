@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('images/background.png'); /* Update the image name if needed */
+    background-image: url('images/background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -10,23 +10,36 @@ body {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    margin: 50px auto;
-    width: 90%;
-    max-width: 900px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 40px;
 }
 
-h1 {
-    text-align: center;
+.profile-header {
     margin-bottom: 30px;
 }
 
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f7c6b5;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+h1 {
+    margin-top: 15px;
+    font-size: 28px;
+}
+
+.tagline {
+    font-size: 18px;
+    color: #a0522d;
+    margin-top: 5px;
+}
+
 .button-container {
-    text-align: center;
-    margin-bottom: 40px;
+    margin-top: 30px;
 }
 
 .button-container button {
@@ -45,29 +58,40 @@ h1 {
     background-color: #e09b88;
 }
 
-section {
-    margin-bottom: 50px;
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
 }
 
-section h2 {
-    margin-bottom: 15px;
-    color: #5c3d2e;
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
 }
 
-section p {
-    line-height: 1.6;
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.headshot {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.headshot img {
-    width: 150px; /* adjust size as you want */
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #f7c6b5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.close:hover {
+    color: #000;
 }
