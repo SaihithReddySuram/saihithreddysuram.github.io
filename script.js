@@ -55,7 +55,7 @@ const data = {
           <h2 style="color: #f7c6b5;">Skills</h2>
           <hr style="border: 1px solid #f7c6b5;">
           <div style="display: flex; justify-content: space-between; flex-wrap: wrap; color: white;">
-            <ul style="list-style-type: disc; padding-left: 20px; flex: 1;">
+            <ul style="list-style-type: disc; padding-left: 20px;">
               <li>Python</li>
               <li>Java</li>
               <li>SQL</li>
@@ -66,7 +66,7 @@ const data = {
               <li>Query optimization</li>
               <li>Power BI</li>
             </ul>
-            <ul style="list-style-type: disc; padding-left: 20px; flex: 1;">
+            <ul style="list-style-type: disc; padding-left: 20px;">
               <li>Natural Language Processing</li>
               <li>Big Data Analytics</li>
               <li>Statistics</li>
@@ -77,7 +77,7 @@ const data = {
               <li>Dependency management</li>
               <li></li>
             </ul>
-            <ul style="list-style-type: disc; padding-left: 20px; flex: 1;">
+            <ul style="list-style-type: disc; padding-left: 20px;">
               <li>Oracle DB</li>
               <li>MySQL</li>
               <li>Databricks</li>
