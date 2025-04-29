@@ -113,6 +113,7 @@ function closeModal() {
 }
 
 let magnifierInterval; // Declare globally
+let prevLeft = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
   const magnifier = document.getElementById("magnifier");
@@ -153,9 +154,22 @@ document.addEventListener("DOMContentLoaded", () => {
     magnifier.style.top = `${top}px`;
     magnifier.style.left = `${left}px`;
 
-    hand.style.display = "block";  
-    hand.style.top = `${top + 80}px`;
-    hand.style.left = `${left - 10}px`;
+    // Determine direction and rotate
+    let rotation = 0;
+    if (left > prevLeft + 10) {
+      rotation = 45; // moving right
+    } else if (left < prevLeft - 10) {
+      rotation = -45; // moving left
+    } else {
+      rotation = 0; // vertical or no movement
+    }
+
+    // Apply rotation with transition
+    magnifier.style.transition = 'top 1s ease-in-out, left 1s ease-in-out, transform 0.5s ease-in-out';
+    magnifier.style.transform = `rotate(${rotation}deg)`;
+
+    // Update previous position
+    prevLeft = left;
 
     // After moving (wait 1 second)
     setTimeout(() => {
