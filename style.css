@@ -25,36 +25,6 @@ body {
   z-index: 10;
 }
 
-#intro-branch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 4px;
-  height: 0;
-  background-color: #f7c6b5;
-  transform: translateX(-50%);
-  z-index: 9;
-  animation: growBranch 1.2s ease-out forwards;
-  animation-delay: 1.2s;
-}
-
-@keyframes dropLine {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(700px); /* Adjust based on layout */
-  }
-}
-
-@keyframes growBranch {
-  from {
-    height: 0;
-  }
-  to {
-    height: 40px; /* Adjust to reach top of button-container */
-  }
-}
 
 
 .profile-header {
