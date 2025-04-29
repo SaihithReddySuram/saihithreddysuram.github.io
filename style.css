@@ -21,27 +21,30 @@ body {
 .profile-section {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 40px;
     margin-bottom: 40px;
+    gap: 80px; /* 🔥 Increased gap between left and right */
+    padding: 20px;
 }
 
 .left-section {
     flex: 1;
-    min-width: 280px;
+    min-width: 300px;
     text-align: center;
+    padding: 10px;
 }
 
 .right-section {
     flex: 2;
-    min-width: 300px;
+    min-width: 350px;
     text-align: justify;
+    padding: 10px;
 }
 
 .profile-pic {
     width: auto;
-    height: 437px; /* maintain the same size */
+    height: 387px; /* maintain the same size */
     object-fit: cover;
     border-radius: 20px;
     border: 6px solid #ffffff;
