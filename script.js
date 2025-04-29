@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       messageBox.style.left = `${rect.left + scrollLeft + rect.width/2 - messageBox.offsetWidth/2}px`;
     } else {
       // Message positioned normally top center
-      messageBox.style.top = `100px`;
+      messageBox.style.top = `80px`;
       messageBox.style.left = `50%`;
       messageBox.style.transform = `translateX(-50%)`;
     }
