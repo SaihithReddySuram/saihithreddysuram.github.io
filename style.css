@@ -113,11 +113,12 @@ h1 {
 
 .section-divider {
   border: none;
-  height: 1px;
-  background-color: #f7c6b5; /* Matches the theme color */
-  margin: 30px auto;
-  width: 80%; /* Adjust as needed */
-  opacity: 0.6;
+  height: 3px; /* Makes the line a little bulkier */
+  background-color: #f7c6b5; /* Your desired color */
+  margin: 20px auto 10px auto; /* Moves the line slightly upward */
+  width: 85%;
+  opacity: 0.9;
+  border-radius: 2px;
 }
 
 .button-container {
