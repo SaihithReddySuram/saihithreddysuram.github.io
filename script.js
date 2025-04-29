@@ -85,6 +85,8 @@ function closeModal() {
     document.getElementById('modal').style.display = "none";
 }
 
+let magnifierInterval; // Declare globally
+
 document.addEventListener("DOMContentLoaded", () => {
   const magnifier = document.getElementById("magnifier");
   const targets = [
@@ -92,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".profile-pic"),
     document.querySelector(".intro"),
   ];
-
   let index = 0;
 
   function moveMagnifier() {
@@ -112,10 +113,20 @@ document.addEventListener("DOMContentLoaded", () => {
     index = (index + 1) % targets.length;
   }
 
-  // Initial position
+  // Start the animation
   moveMagnifier();
+  magnifierInterval = setInterval(moveMagnifier, 3000);
 
-  // Move magnifier every 3 seconds
-  setInterval(moveMagnifier, 3000);
+  // Disable magnifier when any button is clicked
+  const buttons = document.querySelectorAll(".button-container button");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (magnifierInterval) {
+        clearInterval(magnifierInterval);
+        magnifier.style.display = "none"; // Hide magnifier
+      }
+    });
+  });
 });
+
 
