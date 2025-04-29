@@ -304,11 +304,19 @@ h1 {
     align-items: center;
   }
 
-  .branch-left,
-  .branch-right {
+  .branch-left, .branch-right {
     width: 4px;
     height: 40px;
-    margin: 5px 0;
+    margin: 4px 0;
+  }
+
+  .tree-line {
+    height: 160px;
+  }
+
+  .vertical-to-buttons {
+    top: 140px;
+    transform: translateY(0);
   }
 }
 
