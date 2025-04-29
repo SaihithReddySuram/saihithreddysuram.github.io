@@ -155,6 +155,8 @@ h1 {
     color: white;
     position: relative;
     box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .close {
@@ -197,4 +199,27 @@ h1 {
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.5s, top 0.5s, left 0.5s;
+  min-width: 200px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .intro {
+    text-align: center;
+  }
+}
+
+.skills-columns ul {
+  flex: 1;
+  min-width: 150px;
 }
