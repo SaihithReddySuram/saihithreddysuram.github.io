@@ -89,15 +89,28 @@ let magnifierInterval; // Declare globally
 
 document.addEventListener("DOMContentLoaded", () => {
   const magnifier = document.getElementById("magnifier");
+  const messageBox = document.getElementById("magnifier-message");
   const targets = [
-    document.querySelector(".intro-image img"),
-    document.querySelector(".profile-pic"),
-    document.querySelector(".intro"),
+    {
+      el: document.querySelector(".intro-image img"),
+      message: "Data Analysis",
+    },
+    {
+      el: document.querySelector(".profile-pic"),
+      message: "Data Enthusiast",
+    },
+    {
+      el: document.querySelector(".intro"),
+      message: "Professional Summary",
+    },
   ];
+
   let index = 0;
 
   function moveMagnifier() {
-    const target = targets[index];
+    const targetData = targets[index];
+    const target = targetData.el;
+
     if (!target) return;
 
     const rect = target.getBoundingClientRect();
@@ -109,6 +122,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     magnifier.style.top = `${top}px`;
     magnifier.style.left = `${left}px`;
+
+    // Show corresponding message
+    messageBox.textContent = targetData.message;
+    messageBox.style.opacity = 1;
+
+    // Hide the message after 2 seconds
+    setTimeout(() => {
+      messageBox.style.opacity = 0;
+    }, 2000);
 
     index = (index + 1) % targets.length;
   }
@@ -123,7 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       if (magnifierInterval) {
         clearInterval(magnifierInterval);
-        magnifier.style.display = "none"; // Hide magnifier
+        magnifier.style.display = "none";
+        messageBox.style.display = "none";
       }
     });
   });
