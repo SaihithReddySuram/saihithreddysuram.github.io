@@ -52,25 +52,50 @@ const data = {
         </ul>
     `,
     skills: `
-        <h2 style="color: #f7c6b5;">Skills</h2>
-        <hr style="border: 1px solid #f7c6b5;">
-        <ul style="color: #ffffff; text-align: left;">
-            <li><strong>Languages:</strong> Python, Java, SQL, R</li>
-            <li><strong>Technologies:</strong> Machine Learning, Natural Language Processing, Big Data Analytics, Statistics</li>
-            <li><strong>Database Management:</strong> Oracle DB, MySQL</li>
-            <li><strong>Data Platforms:</strong> Databricks, Azure Synapse, Azure Data Explorer, Azure Data Factory</li>
-            <li><strong>Data Analysis & Processing:</strong> Pandas, NumPy, PySpark</li>
-            <li><strong>ETL/ELT & Data Pipelines:</strong> Data transformation, workload management, data warehousing, Delta Lake</li>
-            <li><strong>Optimization & Performance:</strong> Query optimization, dependency management</li>
-            <li><strong>Reporting & Analytics Tools:</strong> Excel, Power BI</li>
-        </ul>
-    `,
+          <h2 style="color: #f7c6b5;">Skills</h2>
+          <hr style="border: 1px solid #f7c6b5;">
+          <div style="display: flex; justify-content: space-between; flex-wrap: wrap; color: white;">
+            <ul style="list-style-type: disc; padding-left: 20px; flex: 1;">
+              <li>Python</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>R</li>
+              <li>Machine Learning</li>
+              <li>NumPy</li>
+              <li>Workload management</li>
+              <li>Query optimization</li>
+              <li>Power BI</li>
+            </ul>
+            <ul style="list-style-type: disc; padding-left: 20px; flex: 1;">
+              <li>Natural Language Processing</li>
+              <li>Big Data Analytics</li>
+              <li>Statistics</li>
+              <li>Azure Synapse</li>
+              <li>Azure Data Factory</li>
+              <li>PySpark</li>
+              <li>Data warehousing</li>
+              <li>Dependency management</li>
+              <li></li>
+            </ul>
+            <ul style="list-style-type: disc; padding-left: 20px; flex: 1;">
+              <li>Oracle DB</li>
+              <li>MySQL</li>
+              <li>Databricks</li>
+              <li>Azure Data Explorer</li>
+              <li>Pandas</li>
+              <li>Data transformation</li>
+              <li>Delta Lake</li>
+              <li>Excel</li>
+              <li></li>
+            </ul>
+          </div>
+    `
     certificates: `
         <h2 style="color: #f7c6b5;">Certificates</h2>
         <hr style="border: 1px solid #f7c6b5;">
         <ul style="color: #ffffff; text-align: left;">
             <li><a href="https://www.mygreatlearning.com/certificate/PFZUUENX" target="_blank">Certification in Data Science </a></li><li><a href="https://www.mygreatlearning.com/certificate/ALPCRNJE" target="_blank">Certification in Data Science - Transcript</a></li>
-            <li><a href="https://udemy-certificate.s3.amazonaws.com/image/UC-e6b38377-1e8c-4bcb-90e1-280ed04bf07d.jpg" target="_blank">Introduction to Snowflake </a></li>
+            <li><a href="https://udemy-certificate.s3.amazonaws.com/image/UC-e6b38377-1e8c-4bcb-90e1-280ed04bf07d.jpg" target="_blank">Azure Data Engineer certificate </a></li>
             <li><a href="https://coursera.org/share/4cdbf3fc1b823c5608bec844d0493a01" target="_blank"> Introduction to Snowflake Coursera Specialization </a></li>
         </ul>
     `
