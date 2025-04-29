@@ -14,33 +14,47 @@ body {
     padding: 40px;
 }
 
-.divider-line {
+#intro-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #f7c6b5;
+  animation: dropLine 1.2s ease-out forwards;
+  z-index: 10;
+}
+
+#intro-branch {
   position: absolute;
   top: 0;
   left: 50%;
   width: 4px;
-  height: calc(100% + 120px); /* extends below profile section to reach buttons */
+  height: 0;
   background-color: #f7c6b5;
-  z-index: 10;
   transform: translateX(-50%);
-  animation: dropDown 1s ease-out forwards;
+  z-index: 9;
+  animation: growBranch 1.2s ease-out forwards;
+  animation-delay: 1.2s;
 }
 
-@keyframes dropDown {
+@keyframes dropLine {
   0% {
-    height: 0;
-    opacity: 0;
-  }
-  50% {
-    height: 50%;
-    opacity: 0.8;
+    transform: translateY(0);
   }
   100% {
-    height: 100%;
-    opacity: 1;
+    transform: translateY(100px); /* Adjust based on layout */
   }
 }
 
+@keyframes growBranch {
+  from {
+    height: 0;
+  }
+  to {
+    height: 40px; /* Adjust to reach top of button-container */
+  }
+}
 
 
 .profile-header {
