@@ -149,10 +149,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const top = rect.top + scrollTop + rect.height / 2 - magnifier.offsetHeight / 2;
     const left = rect.left + scrollLeft + rect.width / 2 - magnifier.offsetWidth / 2;
 
-    // Move the magnifier to target smoothly
+    // Move the magnifier to target smoothly  
+    magnifier.style.top = `${top}px`;
+    magnifier.style.left = `${left}px`;
+
     hand.style.display = "block";  
-    magnifier.style.top = `${top + 80}px`;
-    magnifier.style.left = `${left - 10}px`;
+    hand.style.top = `${top + 80}px`;
+    hand.style.left = `${left - 10}px`;
 
     // After moving (wait 1 second)
     setTimeout(() => {
