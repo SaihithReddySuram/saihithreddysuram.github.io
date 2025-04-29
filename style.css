@@ -274,6 +274,21 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .horizontal-line {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .branch-left,
+  .branch-right {
+    width: 4px;
+    height: 40px;
+    margin: 5px 0;
+  }
+}
+
+
+@media (max-width: 768px) {
   .profile-section {
     flex-direction: column;
     gap: 30px;
