@@ -89,7 +89,7 @@ const data = {
               <li></li>
             </ul>
           </div>
-    `
+    `,
     certificates: `
         <h2 style="color: #f7c6b5;">Certificates</h2>
         <hr style="border: 1px solid #f7c6b5;">
