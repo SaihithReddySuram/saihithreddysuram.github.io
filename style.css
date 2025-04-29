@@ -97,7 +97,9 @@ h1 {
 }
 
 .intro-image {
-    margin-top: 30px;
+    margin: 40px auto;
+    width: 90%;
+    margin-top: 50px;
     text-align: center;
 }
 
