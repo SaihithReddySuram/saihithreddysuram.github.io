@@ -120,6 +120,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const hand = document.getElementById("magnifier-hand");
   const messageBox = document.getElementById("magnifier-message");
 
+  const branch = document.getElementById("intro-branch");
+  const buttonContainer = document.querySelector(".button-container");
+
+  const branchTop = 100; // match the final Y of dropLine in CSS
+  const containerTop = buttonContainer.getBoundingClientRect().top;
+
+  const verticalLength = containerTop - branchTop - 20;
+
+  branch.style.top = `${branchTop}px`;
+  branch.style.height = `${verticalLength}px`;
+
+
   const targets = [
     {
       el: document.querySelector(".intro-image img"),
