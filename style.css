@@ -43,7 +43,7 @@ body {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(100px); /* Adjust based on layout */
+    transform: translateY(400px); /* Adjust based on layout */
   }
 }
 
