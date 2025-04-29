@@ -84,3 +84,38 @@ function openModal(section) {
 function closeModal() {
     document.getElementById('modal').style.display = "none";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const magnifier = document.getElementById("magnifier");
+  const targets = [
+    document.querySelector(".intro-image img"),
+    document.querySelector(".profile-pic"),
+    document.querySelector(".intro"),
+  ];
+
+  let index = 0;
+
+  function moveMagnifier() {
+    const target = targets[index];
+    if (!target) return;
+
+    const rect = target.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    const top = rect.top + scrollTop + rect.height / 2 - magnifier.offsetHeight / 2;
+    const left = rect.left + scrollLeft + rect.width / 2 - magnifier.offsetWidth / 2;
+
+    magnifier.style.top = `${top}px`;
+    magnifier.style.left = `${left}px`;
+
+    index = (index + 1) % targets.length;
+  }
+
+  // Initial position
+  moveMagnifier();
+
+  // Move magnifier every 3 seconds
+  setInterval(moveMagnifier, 3000);
+});
+
