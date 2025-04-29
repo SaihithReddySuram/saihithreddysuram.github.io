@@ -116,6 +116,7 @@ let magnifierInterval; // Declare globally
 
 document.addEventListener("DOMContentLoaded", () => {
   const magnifier = document.getElementById("magnifier");
+  const hand = document.getElementById("magnifier-hand");
   const messageBox = document.getElementById("magnifier-message");
 
   const targets = [
@@ -149,8 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const left = rect.left + scrollLeft + rect.width / 2 - magnifier.offsetWidth / 2;
 
     // Move the magnifier to target smoothly
-    magnifier.style.top = `${top}px`;
-    magnifier.style.left = `${left}px`;
+    hand.style.display = "block";  
+    magnifier.style.top = `${top + 80}px`;
+    magnifier.style.left = `${left - 10}px`;
 
     // After moving (wait 1 second)
     setTimeout(() => {
