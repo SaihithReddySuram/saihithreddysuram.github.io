@@ -41,7 +41,7 @@ body {
 
 .profile-pic {
     width: auto;
-    height: 637px; /* maintain the same size */
+    height: 537px; /* maintain the same size */
     object-fit: cover;
     border-radius: 20px;
     border: 6px solid #ffffff;
