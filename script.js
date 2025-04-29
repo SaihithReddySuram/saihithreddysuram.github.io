@@ -95,7 +95,7 @@ const data = {
         <hr style="border: 1px solid #f7c6b5;">
         <ul style="color: #ffffff; text-align: left;">
             <li><a href="https://www.mygreatlearning.com/certificate/PFZUUENX" target="_blank">Certification in Data Science </a></li><li><a href="https://www.mygreatlearning.com/certificate/ALPCRNJE" target="_blank">Certification in Data Science - Transcript</a></li>
-            <li><a href="https://udemy-certificate.s3.amazonaws.com/image/UC-e6b38377-1e8c-4bcb-90e1-280ed04bf07d.jpg" target="_blank">Azure Data Engineer certificate </a></li>
+            <li><a href="https://udemy-certificate.s3.amazonaws.com/image/UC-e6b38377-1e8c-4bcb-90e1-280ed04bf07d.jpg" target="_blank">Azure Data Engineer Certification</a></li>
             <li><a href="https://coursera.org/share/4cdbf3fc1b823c5608bec844d0493a01" target="_blank"> Introduction to Snowflake Coursera Specialization </a></li>
         </ul>
     `
