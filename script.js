@@ -85,7 +85,7 @@ function closeModal() {
     document.getElementById('modal').style.display = "none";
 }
 
-let magnifierInterval;
+let magnifierInterval; // Declare globally
 
 document.addEventListener("DOMContentLoaded", () => {
   const magnifier = document.getElementById("magnifier");
@@ -121,33 +121,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const top = rect.top + scrollTop + rect.height / 2 - magnifier.offsetHeight / 2;
     const left = rect.left + scrollLeft + rect.width / 2 - magnifier.offsetWidth / 2;
 
+    // Move the magnifier to target smoothly
     magnifier.style.top = `${top}px`;
     magnifier.style.left = `${left}px`;
 
-    // Show corresponding message
-    messageBox.textContent = targetData.message;
-    messageBox.style.opacity = 1;
-
-    if (target.classList.contains('profile-pic')) {
-      // Message positioned above tagline when on profile-pic
-      messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; /* 10px below the image bottom */
-      messageBox.style.left = `${rect.left + scrollLeft + rect.width/2 - messageBox.offsetWidth/2}px`;
-    } else {
-      // Message positioned normally top center
-      messageBox.style.top = `80px`;
-      messageBox.style.left = `50%`;
-      messageBox.style.transform = `translateX(-50%)`;
-    }
-
-    // Hide the message after 2 seconds
+    // After moving (wait 1 second)
     setTimeout(() => {
-      messageBox.style.opacity = 0;
-    }, 2000);
+      // Show the message
+      messageBox.textContent = targetData.message;
+      messageBox.style.opacity = 1;
+
+      if (target.classList.contains('profile-pic')) {
+        // Special positioning for profile-pic (underneath name & tag)
+        messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
+        messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
+        messageBox.style.transform = `translateX(0)`;
+      } else {
+        // Default positioning for intro-image and intro
+        messageBox.style.top = `70px`;
+        messageBox.style.left = `50%`;
+        messageBox.style.transform = `translateX(-50%)`;
+      }
+
+      // Hide message after 2 seconds
+      setTimeout(() => {
+        messageBox.style.opacity = 0;
+      }, 2000);
+
+    }, 1000); // ⏳ Wait for magnifier movement to finish (1 sec)
 
     index = (index + 1) % targets.length;
   }
 
-  // Start animation
+  // Start the animation
   moveMagnifier();
   magnifierInterval = setInterval(moveMagnifier, 3000);
 
