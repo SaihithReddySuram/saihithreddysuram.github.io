@@ -75,6 +75,7 @@ const data = {
               <li>PySpark</li>
               <li>Data warehousing</li>
               <li>Dependency management</li>
+              <li>Problem Solving</li>
               <li></li>
             </ul>
             <ul style="list-style-type: disc; padding-left: 20px;">
@@ -86,6 +87,7 @@ const data = {
               <li>Data transformation</li>
               <li>Delta Lake</li>
               <li>Excel</li>
+              <li>Communication</li>
               <li></li>
             </ul>
           </div>
