@@ -85,11 +85,12 @@ function closeModal() {
     document.getElementById('modal').style.display = "none";
 }
 
-let magnifierInterval; // Declare globally
+let magnifierInterval;
 
 document.addEventListener("DOMContentLoaded", () => {
   const magnifier = document.getElementById("magnifier");
   const messageBox = document.getElementById("magnifier-message");
+
   const targets = [
     {
       el: document.querySelector(".intro-image img"),
@@ -127,6 +128,17 @@ document.addEventListener("DOMContentLoaded", () => {
     messageBox.textContent = targetData.message;
     messageBox.style.opacity = 1;
 
+    if (target.classList.contains('profile-pic')) {
+      // Message positioned above tagline when on profile-pic
+      messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; /* 10px below the image bottom */
+      messageBox.style.left = `${rect.left + scrollLeft + rect.width/2 - messageBox.offsetWidth/2}px`;
+    } else {
+      // Message positioned normally top center
+      messageBox.style.top = `100px`;
+      messageBox.style.left = `50%`;
+      messageBox.style.transform = `translateX(-50%)`;
+    }
+
     // Hide the message after 2 seconds
     setTimeout(() => {
       messageBox.style.opacity = 0;
@@ -135,11 +147,11 @@ document.addEventListener("DOMContentLoaded", () => {
     index = (index + 1) % targets.length;
   }
 
-  // Start the animation
+  // Start animation
   moveMagnifier();
   magnifierInterval = setInterval(moveMagnifier, 3000);
 
-  // Disable magnifier when any button is clicked
+  // Disable magnifier and message when any button is clicked
   const buttons = document.querySelectorAll(".button-container button");
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
