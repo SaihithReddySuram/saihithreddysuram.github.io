@@ -44,7 +44,7 @@ body {
     min-width: 300px;
     text-align: center;
     padding: 10px;
-    animation: slideInLeft 1s ease-out forwards;
+    animation: slideInLeft 1.8s ease-out forwards;
 }
 
 @keyframes fadeUp {
@@ -63,7 +63,7 @@ body {
     min-width: 400px;
     text-align: justify;
     padding: 20px;
-    animation: fadeUp 1.2s ease-out forwards;
+    animation: fadeUp 2s ease-out forwards;
     border-left: 2px solid #f7c6b5;
 }
 
