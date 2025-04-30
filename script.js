@@ -116,104 +116,110 @@ let magnifierInterval; // Declare globally
 let prevLeft = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const magnifier = document.getElementById("magnifier");
-  const hand = document.getElementById("magnifier-hand");
-  const messageBox = document.getElementById("magnifier-message");
+  const divider = document.querySelector(".section-divider");
+  divider.style.opacity = "1";
+  divider.style.animation = "slideFromTop 1s ease-out forwards";
+    
+  setTimeout(() => {  
+      const magnifier = document.getElementById("magnifier");
+      const hand = document.getElementById("magnifier-hand");
+      const messageBox = document.getElementById("magnifier-message");
 
-  const targets = [
-    {
-      el: document.querySelector(".intro-image img"),
-      message: "Data Analysis",
-    },
-    {
-      el: document.querySelector(".profile-pic"),
-      message: "Data Enthusiast",
-    },
-    {
-      el: document.querySelector(".intro"),
-      message: "Professional Summary",
-    },
-  ];
+      const targets = [
+        {
+          el: document.querySelector(".intro-image img"),
+          message: "Data Analysis",
+        },
+        {
+          el: document.querySelector(".profile-pic"),
+          message: "Data Enthusiast",
+        },
+        {
+          el: document.querySelector(".intro"),
+          message: "Professional Summary",
+        },
+      ];
 
-  let index = 0;
+      let index = 0;
+      let prevLeft = 0;
 
-  function moveMagnifier() {
-    const targetData = targets[index];
-    const target = targetData.el;
+      function moveMagnifier() {
+        const targetData = targets[index];
+        const target = targetData.el;
 
-    if (!target) return;
+        if (!target) return;
 
-    const rect = target.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        const rect = target.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-    const top = rect.top + scrollTop + rect.height / 2 - magnifier.offsetHeight / 2;
-    const left = rect.left + scrollLeft + rect.width / 2 - magnifier.offsetWidth / 2;
+        const top = rect.top + scrollTop + rect.height / 2 - magnifier.offsetHeight / 2;
+        const left = rect.left + scrollLeft + rect.width / 2 - magnifier.offsetWidth / 2;
 
-    // Move the magnifier to target smoothly  
-    magnifier.style.top = `${top}px`;
-    magnifier.style.left = `${left}px`;
+        // Move the magnifier to target smoothly  
+        magnifier.style.top = `${top}px`;
+        magnifier.style.left = `${left}px`;
 
-    // Determine direction and rotate
-    let rotation = 0;
-    if (left > prevLeft + 10) {
-      rotation = 45; // moving right
-    } else if (left < prevLeft - 10) {
-      rotation = -45; // moving left
-    } else {
-      rotation = 0; // vertical or no movement
-    }
+        // Determine direction and rotate
+        let rotation = 0;
+        if (left > prevLeft + 10) {
+          rotation = 45; // moving right
+        } else if (left < prevLeft - 10) {
+          rotation = -45; // moving left
+        } else {
+          rotation = 0; // vertical or no movement
+        }
 
-    // Apply rotation with transition
-    magnifier.style.transition = 'top 1s ease-in-out, left 1s ease-in-out, transform 0.5s ease-in-out';
-    magnifier.style.transform = `rotate(${rotation}deg)`;
+        // Apply rotation with transition
+        magnifier.style.transition = 'top 1s ease-in-out, left 1s ease-in-out, transform 0.5s ease-in-out';
+        magnifier.style.transform = `rotate(${rotation}deg)`;
 
-    // Update previous position
-    prevLeft = left;
+        // Update previous position
+        prevLeft = left;
 
-    // After moving (wait 1 second)
-    setTimeout(() => {
-      // Show the message
-      messageBox.textContent = targetData.message;
-      messageBox.style.opacity = 1;
+        // After moving (wait 1 second)
+        setTimeout(() => {
+          // Show the message
+          messageBox.textContent = targetData.message;
+          messageBox.style.opacity = 1;
 
-      if (target.classList.contains('profile-pic')) {
-        // Special positioning for profile-pic (underneath name & tag)
-        messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
-        messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
-        messageBox.style.transform = `translateX(0)`;
-      } else {
-        // Default positioning for intro-image and intro
-        messageBox.style.top = `70px`;
-        messageBox.style.left = `50%`;
-        messageBox.style.transform = `translateX(-50%)`;
+          if (target.classList.contains('profile-pic')) {
+            // Special positioning for profile-pic (underneath name & tag)
+            messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
+            messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
+            messageBox.style.transform = `translateX(0)`;
+          } else {
+            // Default positioning for intro-image and intro
+            messageBox.style.top = `70px`;
+            messageBox.style.left = `50%`;
+            messageBox.style.transform = `translateX(-50%)`;
+          }
+
+          // Hide message after 2 seconds
+          setTimeout(() => {
+            messageBox.style.opacity = 0;
+          }, 2000);
+
+        }, 1000); // ⏳ Wait for magnifier movement to finish (1 sec)
+
+        index = (index + 1) % targets.length;
       }
 
-      // Hide message after 2 seconds
-      setTimeout(() => {
-        messageBox.style.opacity = 0;
-      }, 2000);
+      // Start the animation
+      moveMagnifier();
+      magnifierInterval = setInterval(moveMagnifier, 3000);
 
-    }, 1000); // ⏳ Wait for magnifier movement to finish (1 sec)
-
-    index = (index + 1) % targets.length;
-  }
-
-  // Start the animation
-  moveMagnifier();
-  magnifierInterval = setInterval(moveMagnifier, 3000);
-
-  // Disable magnifier and message when any button is clicked
-  const buttons = document.querySelectorAll(".button-container button");
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (magnifierInterval) {
-        clearInterval(magnifierInterval);
-        magnifier.style.display = "none";
-        messageBox.style.display = "none";
-      }
+      // Disable magnifier and message when any button is clicked
+      const buttons = document.querySelectorAll(".button-container button");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (magnifierInterval) {
+            clearInterval(magnifierInterval);
+            magnifier.style.display = "none";
+            messageBox.style.display = "none";
+          }
+        });
+      });
     });
-  });
-});
-
+  }, 1200);
 
