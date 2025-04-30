@@ -290,12 +290,12 @@ h1 {
 @media (max-width: 768px) {
   /* General layout adjustments */
   .container {
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
 
   .profile-section {
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     width: 95%;
   }
 
@@ -307,7 +307,6 @@ h1 {
 
   .right-section {
     border-left: none;
-    border-top: 2px solid #f7c6b5;
     padding-top: 20px;
   }
 
@@ -328,14 +327,14 @@ h1 {
 
   /* Profile image */
   .profile-pic {
-    height: 200px;
+    height: 300px;
     width: 100%;
     max-width: 300px;
     object-fit: cover;
   }
 
   .intro-image img {
-    height: 120px;
+    height: 150px;
     width: 100%;
     max-width: 300px;
   }
