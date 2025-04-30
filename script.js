@@ -120,6 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
   divider.style.opacity = "1";
   divider.style.animation = "slideFromTop 1s ease-out forwards";
 
+  const button = document.querySelector(".button-container");
+  button.style.opacity = "1";
+  button.style.animation = "slideFromTop 1s ease-out forwards";
+
   const top = document.querySelector(".section-top");
   top.style.opacity = "1";
   top.style.animation = "slideUp 1s ease-out forwards";  
