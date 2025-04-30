@@ -114,7 +114,7 @@ h1 {
 
 @keyframes slideFromTop {
   0% {
-    transform: translateY(-50px);
+    transform: translateY(-100px);
     opacity: 0;
   }
   100% {
