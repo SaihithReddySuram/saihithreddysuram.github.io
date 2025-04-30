@@ -187,17 +187,18 @@ h1 {
     margin: 10px;
     padding: 14px 24px;
     font-size: 18px;
-    border: none;
+    border: 2px solid #f7c6b5; /* border color */
     border-radius: 8px;
-    background-color: #f7c6b5; /* light button */
-    color: #00312F; /* button text deep background */
+    background-color: #00312F; /* same as container background */
+    color: #ffffff; /* white text */
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
     font-weight: bold;
 }
 
 .button-container button:hover {
-    background-color: #e09b88;
+    background-color: #f7c6b5;
+    color: #00312F; /* invert colors on hover */
 }
 
 
