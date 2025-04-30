@@ -196,11 +196,21 @@ document.addEventListener("DOMContentLoaded", () => {
             messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
             messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
             messageBox.style.transform = `translateX(0)`;
-          } else {
-            // Default positioning for intro-image and intro
-            messageBox.style.top = `70px`;
-            messageBox.style.left = `50%`;
-            messageBox.style.transform = `translateX(-50%)`;
+          } else if (target.classList.contains("intro") || target.classList.contains("intro-image")) {
+              // Position between intro-image and intro
+              const introImage = document.querySelector(".intro-image");
+              const introText = document.querySelector(".intro");
+
+              const introImageRect = introImage.getBoundingClientRect();
+              const introTextRect = introText.getBoundingClientRect();
+
+              const imageBottom = introImageRect.bottom + scrollTop;
+              const textTop = introTextRect.top + scrollTop;
+              const midpoint = (imageBottom + textTop) / 2;
+
+              messageBox.style.top = `${midpoint}px`;
+              messageBox.style.left = `50%`;
+              messageBox.style.transform = `translateX(-50%)`;
           }
 
           // Hide message after 2 seconds
