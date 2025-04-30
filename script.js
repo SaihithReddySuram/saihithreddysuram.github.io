@@ -198,9 +198,9 @@ document.addEventListener("DOMContentLoaded", () => {
           // Hide message after 2 seconds
           setTimeout(() => {
             messageBox.style.opacity = 0;
-          }, 2000);
+          }, 3000);
 
-        }, 1000); // ⏳ Wait for magnifier movement to finish (1 sec)
+        }, 2500); // ⏳ Wait for magnifier movement to finish (1 sec)
 
         index = (index + 1) % targets.length;
       }
