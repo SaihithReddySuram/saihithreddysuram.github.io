@@ -136,15 +136,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const targets = [
         {
           el: document.querySelector(".intro-image img"),
-          message: "Data Analysis",
+          message: "Finding key Insights - Data Analysis",
         },
         {
           el: document.querySelector(".profile-pic"),
-          message: "Data Enthusiast",
+          message: "Saihith Reddy - Data Enthusiast",
         },
         {
           el: document.querySelector(".intro"),
-          message: "Professional Summary",
+          message: "Saihtih Reddy - Professional Summary",
         },
       ];
 
