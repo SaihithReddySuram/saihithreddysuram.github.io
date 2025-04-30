@@ -119,6 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const divider = document.querySelector(".section-divider");
   divider.style.opacity = "1";
   divider.style.animation = "slideFromTop 1s ease-out forwards";
+
+  const divider = document.querySelector(".section-top");
+  divider.style.opacity = "1";
+  divider.style.animation = "slideUp 1s ease-out forwards";  
     
   setTimeout(() => {  
       const magnifier = document.getElementById("magnifier");
