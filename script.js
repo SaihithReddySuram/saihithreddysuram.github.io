@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
               const textTop = introTextRect.top + scrollTop;
               const midpoint = (imageBottom + textTop) / 2;
 
-              messageBox.style.top = `${midpoint}px`;
+              messageBox.style.top = `${midpoint + 5}px`;
               messageBox.style.left = `50%`;
               messageBox.style.transform = `translateX(-50%)`;
           }
