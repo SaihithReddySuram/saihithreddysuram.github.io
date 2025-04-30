@@ -386,7 +386,7 @@ h1 {
   }
 
   .vertical-to-buttons {
-    top: 140px;
+    top: 80px;
     transform: translateY(0);
   }
 }
