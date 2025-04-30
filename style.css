@@ -290,7 +290,10 @@ h1 {
 @media (max-width: 768px) {
   /* General layout adjustments */
   .container {
+    text-align: center;  
     padding: 10px 10px;
+    justify-content: center;
+    align-items: center;  
   }
 
   .profile-section {
