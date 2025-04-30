@@ -99,7 +99,8 @@ body {
     min-width: 400px;
     text-align: justify;
     padding: 20px;
-    animation: fadeUp 5s ease-out forwards; /*border-left: 1px solid #f7c6b5;*/
+    animation: fadeUp 5s ease-out forwards; 
+    border-left: 2px solid #f7c6b5;
 }
 
 
