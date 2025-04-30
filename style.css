@@ -288,12 +288,92 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  /* General layout adjustments */
+  .container {
+    padding: 20px 10px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    gap: 30px;
+    width: 95%;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .right-section {
+    border-left: none;
+    border-top: 2px solid #f7c6b5;
+    padding-top: 20px;
+  }
+
+  .intro {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Adjust headings and tagline */
+  h1 {
+    font-size: 22px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  /* Profile image */
+  .profile-pic {
+    height: 200px;
+    width: 100%;
+    max-width: 300px;
+    object-fit: cover;
+  }
+
+  .intro-image img {
+    height: 120px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Buttons layout */
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-container button {
+    width: 100%;
+    max-width: 250px;
+    font-size: 16px;
+  }
+
+  /* Modal content resizing */
+  .modal-content {
+    width: 95%;
+    max-height: 80vh;
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  /* Skills list layout */
+  .skills-columns ul {
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* Horizontal lines and tree layout fix */
   .horizontal-line {
     flex-direction: column;
     align-items: center;
   }
 
-  .branch-left, .branch-right {
+  .branch-left,
+  .branch-right {
     width: 4px;
     height: 40px;
     margin: 4px 0;
@@ -309,27 +389,6 @@ h1 {
   }
 }
 
-
-@media (max-width: 768px) {
-  .profile-section {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .left-section, .right-section {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .intro {
-    text-align: center;
-  }
-}
-
-.skills-columns ul {
-  flex: 1;
-  min-width: 150px;
-}
 
 
 
