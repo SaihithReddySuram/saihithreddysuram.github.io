@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 95vh; /* centers vertically */
+    min-height: 100vh; /* centers vertically */
     flex-direction: column;
 }
 
