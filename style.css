@@ -27,6 +27,7 @@ body {
     margin-bottom: 40px;
     gap: 80px; /* 🔥 Increased gap between left and right */
     padding: 20px;
+    margin-bottom: 10px;
 }
 
 @keyframes slideInLeft {
@@ -111,14 +112,28 @@ h1 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .section-divider {
   border: none;
-  height: 3px; /* Makes the line a little bulkier */
-  background-color: #f7c6b5; /* Your desired color */
-  margin: 20px auto 10px auto; /* Moves the line slightly upward */
+  height: 3px;
+  background-color: #f7c6b5;
+  margin: 10px auto 10px auto;
   width: 85%;
-  opacity: 0.9;
+  opacity: 0;
   border-radius: 2px;
+
+  animation: slideFromTop 1s ease-out forwards;
+  animation-delay: 0.5s; /* Optional: adds a small delay for dramatic effect */
 }
 
 .button-container {
