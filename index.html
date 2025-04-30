@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="opening-animation">
+  <div id="dot-line"></div>
+</div>  
   
 <div class="container">
   <hr class="section-top">
@@ -53,6 +56,17 @@
 <div id="magnifier"></div>  
 <div id="magnifier-message"></div>
 <script src="script.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    const container = document.querySelector(".container");
+    container.style.opacity = "0";
+
+    setTimeout(() => {
+      document.getElementById("opening-animation").style.display = "none";
+      container.style.opacity = "1";
+    }, 4000);
+  });
+</script>  
   
 </body>
 </html>
