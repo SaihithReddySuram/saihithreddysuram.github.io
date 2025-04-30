@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           el: document.querySelector(".intro"),
-          message: "Saihtih Reddy's Professional Summary",
+          message: "Saihtih's Professional Summary",
         },
       ];
 
