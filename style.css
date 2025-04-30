@@ -99,20 +99,9 @@ body {
     min-width: 400px;
     text-align: justify;
     padding: 20px;
-    animation: fadeUp 5s ease-out forwards;
-    border-left: 1px solid #f7c6b5;
+    animation: fadeUp 5s ease-out forwards; /*border-left: 1px solid #f7c6b5;*/
 }
 
-.right-section::before {
-  content: "";
-  position: absolute;
-  left: -20px; /* adjust as needed to align between sections */
-  top: 60px;   /* start a bit below the top */
-  height: 60%; /* controls the length — reduce or increase as needed */
-  width: 1px;
-  background-color: #f7c6b5;
-  opacity: 0.5;
-}
 
 .profile-pic {
     width: auto;
