@@ -138,11 +138,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           el: document.querySelector(".profile-pic"),
-          message: "Saihith Reddy - Data Enthusiast",
+          message: "Saihith Reddy a Data Enthusiast",
         },
         {
           el: document.querySelector(".intro"),
-          message: "Saihtih Reddy - Professional Summary",
+          message: "Saihtih Reddy's Professional Summary",
         },
       ];
 
