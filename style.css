@@ -291,32 +291,32 @@ h1 {
   /* General layout adjustments */
   .container {
     text-align: center;  
-    padding: 5px 5px;
+    padding: 2px 2px;
     justify-content: center;
     align-items: center;  
   }
 
   .profile-section {
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
     width: 95%;
   }
 
   .left-section,
   .right-section {
     width: 100%;
-    padding: 3px;
+    padding: 2px;
   }
 
   .right-section {
     border-left: none;
-    padding-top: 20px;
+    padding-top: 2px;
   }
 
   .intro {
     text-align: center;
     font-size: 14px;
-    padding: 5px;
+    padding: 2px;
   }
 
   /* Adjust headings and tagline */
@@ -357,9 +357,9 @@ h1 {
   /* Modal content resizing */
   .modal-content {
     width: 95%;
-    max-height: 80vh;
+    max-height: 70vh;
     font-size: 14px;
-    padding: 5px;
+    padding: 2px;
   }
 
   /* Skills list layout */
@@ -376,9 +376,9 @@ h1 {
 
   .branch-left,
   .branch-right {
-    width: 4px;
-    height: 40px;
-    margin: 4px 0;
+    width: 2px;
+    height: 20px;
+    margin: 2px 0;
   }
 
   .tree-line {
