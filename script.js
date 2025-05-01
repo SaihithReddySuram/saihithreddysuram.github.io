@@ -146,7 +146,7 @@ function step2Animations() {
   setTimeout(() => {
     startMagnifierAnimation();
   }, 1500);
-}
+};
 
 function startMagnifierAnimation() {
   const magnifier = document.getElementById("magnifier");
@@ -196,7 +196,7 @@ function startMagnifierAnimation() {
     index = (index + 1) % targets.length;
   }
 
-  magnifier.style.display = 'block';
+  moveMagnifier();
   magnifierInterval = setInterval(moveMagnifier, 3000);
-}
+};
 
