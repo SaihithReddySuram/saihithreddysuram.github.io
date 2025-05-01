@@ -122,7 +122,7 @@ window.onload = () => {
   [divider, button, top].forEach(el => {
     if (el) {
       el.style.opacity = "1";
-      el.style.animation = "slideFromTop 6s ease-out forwards";
+      el.style.animation = "slideFromTop 8s ease-out forwards";
     }
   });
 
