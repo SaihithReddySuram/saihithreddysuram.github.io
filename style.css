@@ -122,8 +122,8 @@ body {
     width: 80%;
     max-width: 1000px;
     margin: 0 auto;
-    gap: 10px; /* reduced gap */
-    padding: 1.5rem;
+    gap: 8px; /* reduced gap */
+    padding: 1rem;
     background-color: rgba(255, 255, 255, 0.03); /* optional background for distinction */
     border-radius: 12px;
     box-sizing: border-box;
