@@ -126,9 +126,6 @@ body {
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.03); /* optional background for distinction */
     border-radius: 12px;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
 
     transform: scale(0.5);
     opacity: 0;
@@ -385,7 +382,10 @@ h1 {
     flex-direction: column;
     gap: 1px;
     width: 90%;
-    padding: 0rem;  
+    padding: 0rem; 
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;  
   }
 
   .profile-section h1,
