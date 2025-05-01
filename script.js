@@ -114,135 +114,107 @@ let magnifierInterval; // Declare globally
 let prevLeft = 0;
 
 window.onload = () => {
-  const container = document.querySelector(".container");
-  container.style.opacity = "0";
-  
-  document.getElementById("opening-animation").style.display = "none";
-  container.style.opacity = "1";
+  const divider = document.querySelector(".section-divider");
+  const button = document.querySelector(".button-container");
+  const top = document.querySelector(".section-top");
 
-  setTimeout(() => {
-    const divider = document.querySelector(".section-divider");
-	divider.style.opacity = "1";
-	divider.style.animation = "slideFromTop 5s ease-out forwards";
-	
-	const button = document.querySelector(".button-container");
-	button.style.opacity = "1";
-	button.style.animation = "slideFromTop 5s ease-out forwards";
-	
-	const top = document.querySelector(".section-top");
-	top.style.opacity = "1";
-	top.style.animation = "slideUp 5s ease-out forwards";  
-		
-	setTimeout(() => {  
-		const magnifier = document.getElementById("magnifier");
-		const hand = document.getElementById("magnifier-hand");
-		const messageBox = document.getElementById("magnifier-message");
-	
-		const targets = [
-			{
-			el: document.querySelector(".intro-image img"),
-			message: "Finding key Insights - Data Analysis",
-			},
-			{
-			el: document.querySelector(".profile-pic"),
-			message: "Saihith Reddy a Data Enthusiast",
-			},
-			{
-			el: document.querySelector(".intro"),
-			message: "Saihtih's Professional Summary",
-			},
-		];
-	
-		let index = 0;
-	
-		function moveMagnifier() {
-			const targetData = targets[index];
-			const target = targetData.el;
-	
-			if (!target) return;
-	
-			const rect = target.getBoundingClientRect();
-			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-	
-			const top = rect.top + scrollTop + rect.height / 2 - magnifier.offsetHeight / 2;
-			const left = rect.left + scrollLeft + rect.width / 2 - magnifier.offsetWidth / 2;
-	
-			// Move the magnifier to target smoothly  
-			magnifier.style.top = `${top}px`;
-			magnifier.style.left = `${left}px`;
-	
-			// Determine direction and rotate
-			let rotation = 0;
-			if (left > prevLeft + 10) {
-			rotation = 45; // moving right
-			} else if (left < prevLeft - 10) {
-			rotation = -45; // moving left
-			} else {
-			rotation = 0; // vertical or no movement
-			}
-	
-			// Apply rotation with transition
-			magnifier.style.transition = 'top 1s ease-in-out, left 1s ease-in-out, transform 0.5s ease-in-out';
-			magnifier.style.transform = `rotate(${rotation}deg)`;
-	
-			// Update previous position
-			prevLeft = left;
-	
-			// After moving (wait 1 second)
-			setTimeout(() => {
-			// Show the message
-			messageBox.textContent = targetData.message;
-			messageBox.style.opacity = 1;
-	
-			if (target.classList.contains('profile-pic')) {
-				// Special positioning for profile-pic (underneath name & tag)
-				messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
-				messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
-				messageBox.style.transform = `translateX(0)`;
-			} else if (target.classList.contains("intro") || target.classList.contains("intro-image")) {
-				// Position between intro-image and intro
-				const introImage = document.querySelector(".intro-image");
-				const introText = document.querySelector(".intro");
-	
-				const introImageRect = introImage.getBoundingClientRect();
-				const introTextRect = introText.getBoundingClientRect();
-	
-				const imageBottom = introImageRect.bottom + scrollTop;
-				const textTop = introTextRect.top + scrollTop;
-				const midpoint = (imageBottom + textTop) / 2;
-	
-				messageBox.style.top = `${midpoint - 25}px`;
-				messageBox.style.left = `50%`;
-				messageBox.style.transform = `translateX(-50%)`;
-			}
-	
-			// Hide message after 2 seconds
-			setTimeout(() => {
-				messageBox.style.opacity = 0;
-			}, 1500);
-	
-			}, 1000); // ⏳ Wait for magnifier movement to finish (1 sec)
-	
-			index = (index + 1) % targets.length;
-		}
-	
-		// Start the animation
-		moveMagnifier();
-		magnifierInterval = setInterval(moveMagnifier, 3000);
-	
-		// Disable magnifier and message when any button is clicked
-		const buttons = document.querySelectorAll(".button-container button");
-		buttons.forEach((btn) => {
-			btn.addEventListener("click", () => {
-			if (magnifierInterval) {
-				clearInterval(magnifierInterval);
-				magnifier.style.display = "none";
-				messageBox.style.display = "none";
-			}
-			});
-		});
-		});
-	}, 2000);
-  }, 4000);	
+  // Apply animations immediately
+  [divider, button, top].forEach(el => {
+    if (el) {
+      el.style.opacity = "1";
+      el.style.animation = "slideFromTop 2s ease-out forwards";
+    }
+  });
 
+  // Start magnifier animation
+  const magnifier = document.getElementById("magnifier");
+  const hand = document.getElementById("magnifier-hand");
+  const messageBox = document.getElementById("magnifier-message");
+
+  const targets = [
+    {
+      el: document.querySelector(".intro-image img"),
+      message: "Finding key Insights - Data Analysis",
+    },
+    {
+      el: document.querySelector(".profile-pic"),
+      message: "Saihith Reddy a Data Enthusiast",
+    },
+    {
+      el: document.querySelector(".intro"),
+      message: "Saihtih's Professional Summary",
+    },
+  ];
+
+  let index = 0;
+  let prevLeft = 0;
+
+  function moveMagnifier() {
+    const targetData = targets[index];
+    const target = targetData.el;
+
+    if (!target) return;
+
+    const rect = target.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    const top = rect.top + scrollTop + rect.height / 2 - magnifier.offsetHeight / 2;
+    const left = rect.left + scrollLeft + rect.width / 2 - magnifier.offsetWidth / 2;
+
+    magnifier.style.top = `${top}px`;
+    magnifier.style.left = `${left}px`;
+
+    let rotation = 0;
+    if (left > prevLeft + 10) rotation = 45;
+    else if (left < prevLeft - 10) rotation = -45;
+
+    magnifier.style.transition = 'top 1s ease-in-out, left 1s ease-in-out, transform 0.5s ease-in-out';
+    magnifier.style.transform = `rotate(${rotation}deg)`;
+    prevLeft = left;
+
+    setTimeout(() => {
+      messageBox.textContent = targetData.message;
+      messageBox.style.opacity = 1;
+
+      if (target.classList.contains('profile-pic')) {
+        messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
+        messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
+        messageBox.style.transform = `translateX(0)`;
+      } else if (target.classList.contains("intro") || target.classList.contains("intro-image")) {
+        const introImage = document.querySelector(".intro-image");
+        const introText = document.querySelector(".intro");
+        const introImageRect = introImage.getBoundingClientRect();
+        const introTextRect = introText.getBoundingClientRect();
+        const imageBottom = introImageRect.bottom + scrollTop;
+        const textTop = introTextRect.top + scrollTop;
+        const midpoint = (imageBottom + textTop) / 2;
+
+        messageBox.style.top = `${midpoint - 25}px`;
+        messageBox.style.left = `50%`;
+        messageBox.style.transform = `translateX(-50%)`;
+      }
+
+      setTimeout(() => {
+        messageBox.style.opacity = 0;
+      }, 1500);
+
+    }, 1000);
+
+    index = (index + 1) % targets.length;
+  }
+
+  moveMagnifier();
+  magnifierInterval = setInterval(moveMagnifier, 3000);
+
+  const buttons = document.querySelectorAll(".button-container button");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (magnifierInterval) {
+        clearInterval(magnifierInterval);
+        magnifier.style.display = "none";
+        messageBox.style.display = "none";
+      }
+    });
+  });
+};
