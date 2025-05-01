@@ -142,36 +142,30 @@ function step2Animations() {
   const top = document.querySelector(".section-top");
   top.style.opacity = "1";
   top.style.animation = "slideUp 2s ease-out forwards";  
+    
+  setTimeout(() => {  
+      const magnifier = document.getElementById("magnifier");
+      const hand = document.getElementById("magnifier-hand");
+      const messageBox = document.getElementById("magnifier-message");
 
-  // Wait for Step 2 to finish, then start magnifier (1.5s)
-  setTimeout(() => {
-    startMagnifierAnimation();
-  }, 1500);
-};
+      const targets = [
+        {
+          el: document.querySelector(".intro-image img"),
+          message: "Finding key Insights - Data Analysis",
+        },
+        {
+          el: document.querySelector(".profile-pic"),
+          message: "Saihith Reddy a Data Enthusiast",
+        },
+        {
+          el: document.querySelector(".intro"),
+          message: "Saihtih's Professional Summary",
+        },
+      ];
 
-function startMagnifierAnimation() {
-  const magnifier = document.getElementById("magnifier");
-  const hand = document.getElementById("magnifier-hand");
-  const messageBox = document.getElementById("magnifier-message");  
+      let index = 0;
 
-  const targets = [
-    {
-      el: document.querySelector(".intro-image img"),
-      message: "Finding key Insights - Data Analysis",
-    },
-    {
-      el: document.querySelector(".profile-pic"),
-      message: "Saihith Reddy a Data Enthusiast",
-    },
-    {
-      el: document.querySelector(".intro"),
-      message: "Saihith's Professional Summary",
-    },
-  ];
-
-  let index = 0;
-
-  function moveMagnifier() {
+      function moveMagnifier() {
         const targetData = targets[index];
         const target = targetData.el;
 
@@ -258,5 +252,5 @@ function startMagnifierAnimation() {
           }
         });
       });
-};
-
+    },2000);
+  }
