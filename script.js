@@ -127,6 +127,7 @@ window.onload = () => {
   dot.style.animation = "expandToLine 1s ease-out forwards, splitLine 1s ease-out forwards 1s";  
   opening.style.opacity = "1";
   opening.style.animation = "fadeOutWrapper 3s ease-out forwards"; 
+  document.write(5 + 5);  
   
   sliderAnimation();
 };
@@ -144,12 +145,13 @@ function sliderAnimation() {
       el.style.animation = "slideFromTop 2s ease-out forwards";
     }
   });
+  document.write(5 + 5 + 5);  
   
   startMagnifierAnimation(); 
 };
 
 function startMagnifierAnimation() {
-   document.write(5 + 6);  
+   document.write(5 + 5 + 10);  
   // Start magnifier animation
   const magnifier = document.getElementById("magnifier");
   const hand = document.getElementById("magnifier-hand");
