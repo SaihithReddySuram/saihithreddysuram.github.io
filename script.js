@@ -114,20 +114,41 @@ let magnifierInterval; // Declare globally
 let prevLeft = 0;
 
 window.onload = () => {
-  // Apply animations immediately
+  const dot = document.querySelector(".dot-line");
+  const opening = document.querySelector(".opening-animation");
+
+  // Step 1: Animate dot-line and opening-animation
+  dot.style.opacity = "1";
+  dot.style.animation = "expandToLine 1s ease-out forwards, splitLine 1s ease-out forwards 1s";
+
+  opening.style.opacity = "1";
+  opening.style.animation = "fadeOutWrapper 3s ease-out forwards";
+
+  // Wait for Step 1 to finish (3s), then trigger Step 2
+  setTimeout(() => {
+    step2Animations();
+  }, 3000); // Match to fadeOutWrapper duration
+};
+
+function step2Animations() {
   const divider = document.querySelector(".section-divider");
-  divider.style.opacity = "1";
-  divider.style.animation = "slideFromTop 9s ease-out forwards";
-
   const button = document.querySelector(".button-container");
-  button.style.opacity = "1";
-  button.style.animation = "slideFromTop 9s ease-out forwards";
-
   const top = document.querySelector(".section-top");
-  top.style.opacity = "1";
-  top.style.animation = "slideUp 9s ease-out forwards"; 
 
-  // Start magnifier animation
+  [divider, button, top].forEach(el => {
+    if (el) {
+      el.style.opacity = "1";
+      el.style.animation = "slideFromTop 1.5s ease-out forwards";
+    }
+  });
+
+  // Wait for Step 2 to finish, then start magnifier (1.5s)
+  setTimeout(() => {
+    startMagnifierAnimation();
+  }, 1500);
+}
+
+function startMagnifierAnimation() {
   const magnifier = document.getElementById("magnifier");
   const hand = document.getElementById("magnifier-hand");
   const messageBox = document.getElementById("magnifier-message");
@@ -143,7 +164,7 @@ window.onload = () => {
     },
     {
       el: document.querySelector(".intro"),
-      message: "Saihtih's Professional Summary",
+      message: "Saihith's Professional Summary",
     },
   ];
 
@@ -151,11 +172,9 @@ window.onload = () => {
 
   function moveMagnifier() {
     const targetData = targets[index];
-    const target = targetData.el;
+    if (!targetData || !targetData.el) return;
 
-    if (!target) return;
-
-    const rect = target.getBoundingClientRect();
+    const rect = targetData.el.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
@@ -173,50 +192,11 @@ window.onload = () => {
     magnifier.style.transform = `rotate(${rotation}deg)`;
     prevLeft = left;
 
-    setTimeout(() => {
-      messageBox.textContent = targetData.message;
-      messageBox.style.opacity = 1;
-
-      if (target.classList.contains('profile-pic')) {
-        messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
-        messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
-        messageBox.style.transform = `translateX(0)`;
-      } else if (target.classList.contains("intro") || target.classList.contains("intro-image")) {
-        const introImage = document.querySelector(".intro-image");
-        const introText = document.querySelector(".intro");
-        const introImageRect = introImage.getBoundingClientRect();
-        const introTextRect = introText.getBoundingClientRect();
-        const imageBottom = introImageRect.bottom + scrollTop;
-        const textTop = introTextRect.top + scrollTop;
-        const midpoint = (imageBottom + textTop) / 2;
-
-        messageBox.style.top = `${midpoint - 25}px`;
-        messageBox.style.left = `50%`;
-        messageBox.style.transform = `translateX(-50%)`;
-      }
-
-      setTimeout(() => {
-        messageBox.style.opacity = 0;
-      }, 1500);
-
-    }, 1000);
-
+    messageBox.innerText = targetData.message;
     index = (index + 1) % targets.length;
   }
 
-  moveMagnifier();
+  magnifier.style.display = 'block';
   magnifierInterval = setInterval(moveMagnifier, 3000);
-
-  const buttons = document.querySelectorAll(".button-container button");
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (magnifierInterval) {
-        clearInterval(magnifierInterval);
-        magnifier.style.display = "none";
-        messageBox.style.display = "none";
-      }
-    });
-  });
-  moveMagnifier();  
-};
+}
 
