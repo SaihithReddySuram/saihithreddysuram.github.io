@@ -124,12 +124,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const top = document.querySelector(".section-top");
   top.style.opacity = "1";
-  top.style.animation = "slideUp 6s ease-out forwards";  
+  top.style.animation = "slideUp 6s ease-out forwards"; 
+
+  const profile = document.querySelector(".profile-section");  
+  profile.style.opacity = "1";  
+  profile.style.animation = "expandProfile 6s ease-out forwards";  
     
   setTimeout(() => {  
       const magnifier = document.getElementById("magnifier");
       const hand = document.getElementById("magnifier-hand");
       const messageBox = document.getElementById("magnifier-message");
+      magnifier.style.opacity = "1"; 
 
       const targets = [
         {
