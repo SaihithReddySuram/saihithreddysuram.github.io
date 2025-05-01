@@ -131,6 +131,13 @@ body {
     animation: expandProfile 6s ease-out forwards;
 }
 
+.profile-section p,
+.profile-section h1,
+.profile-section h2 {
+  font-size: 1rem; /* Adjust for smaller screens */
+  word-wrap: break-word;
+}
+
 
 @keyframes slideInLeft {
     from {
@@ -373,7 +380,17 @@ h1 {
     flex-direction: column;
     gap: 1px;
     width: 90%;
+    padding: 0.5rem;  
   }
+
+  .profile-section h1,
+  .profile-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .profile-section p {
+    font-size: 0.95rem;
+  }  
 
   .left-section,
   .right-section {
