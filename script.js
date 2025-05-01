@@ -148,7 +148,8 @@ function sliderAnimation() {
   startMagnifierAnimation(); 
 };
 
-function startMagnifierAnimation() {	
+function startMagnifierAnimation() {
+   document.write(5 + 6);  
   // Start magnifier animation
   const magnifier = document.getElementById("magnifier");
   const hand = document.getElementById("magnifier-hand");
