@@ -153,6 +153,9 @@ function startMagnifierAnimation() {
   const magnifier = document.getElementById("magnifier");
   const hand = document.getElementById("magnifier-hand");
   const messageBox = document.getElementById("magnifier-message");
+  magnifier.style.opacity = "1";
+  hand.style.opacity = "1";
+  messageBox.style.opacity = "1";  
 
   const targets = [
     {
