@@ -86,7 +86,7 @@ body {
   opacity: 0;
   border-radius: 2px;
 
-  animation: slideUp 8s ease-out forwards;
+  animation: slideUp 2s ease-out forwards;
   animation-delay: 0.5s; /* Optional: adds a small delay for dramatic effect */
 }
 
@@ -221,7 +221,7 @@ h1 {
   opacity: 0;
   border-radius: 2px;
 
-  animation: slideFromTop 8s ease-out forwards;
+  animation: slideFromTop 2s ease-out forwards;
   animation-delay: 0.5s; /* Optional: adds a small delay for dramatic effect */
 }
 
