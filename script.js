@@ -117,15 +117,15 @@ window.onload = () => {
   // Apply animations immediately
   const divider = document.querySelector(".section-divider");
   divider.style.opacity = "1";
-  divider.style.animation = "slideFromTop 2s ease-out forwards";
+  divider.style.animation = "slideFromTop 9s ease-out forwards";
 
   const button = document.querySelector(".button-container");
   button.style.opacity = "1";
-  button.style.animation = "slideFromTop 2s ease-out forwards";
+  button.style.animation = "slideFromTop 9s ease-out forwards";
 
   const top = document.querySelector(".section-top");
   top.style.opacity = "1";
-  top.style.animation = "slideUp 2s ease-out forwards"; 
+  top.style.animation = "slideUp 9s ease-out forwards"; 
 
   // Start magnifier animation
   const magnifier = document.getElementById("magnifier");
