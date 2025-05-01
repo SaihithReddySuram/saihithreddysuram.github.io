@@ -217,5 +217,6 @@ window.onload = () => {
       }
     });
   });
+  moveMagnifier();  
 };
 
