@@ -172,6 +172,7 @@ function startMagnifierAnimation() {
   let index = 0;
 
   function moveMagnifier() {
+    document.write(5 + 6);  
     const targetData = targets[index];
     const target = targetData.el;
 
