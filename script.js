@@ -113,7 +113,15 @@ function closeModal() {
 let magnifierInterval; // Declare globally
 let prevLeft = 0;
 
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
+  const container = document.querySelector(".container");
+  container.style.opacity = "0";
+
+  setTimeout(() => {
+    document.getElementById("opening-animation").style.display = "none";
+    container.style.opacity = "1";
+  }, 4000);
+
   const divider = document.querySelector(".section-divider");
   divider.style.opacity = "1";
   divider.style.animation = "slideFromTop 2s ease-out forwards";
@@ -237,5 +245,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     });
-  }, 2000);
+  }, 5000);
 
