@@ -132,15 +132,16 @@ window.onload = () => {
 
 function step2Animations() {
   const divider = document.querySelector(".section-divider");
-  const button = document.querySelector(".button-container");
-  const top = document.querySelector(".section-top");
+  divider.style.opacity = "1";
+  divider.style.animation = "slideFromTop 2s ease-out forwards";
 
-  [divider, button, top].forEach(el => {
-    if (el) {
-      el.style.opacity = "1";
-      el.style.animation = "slideFromTop 1.5s ease-out forwards";
-    }
-  });
+  const button = document.querySelector(".button-container");
+  button.style.opacity = "1";
+  button.style.animation = "slideFromTop 2s ease-out forwards";
+
+  const top = document.querySelector(".section-top");
+  top.style.opacity = "1";
+  top.style.animation = "slideUp 2s ease-out forwards";  
 
   // Wait for Step 2 to finish, then start magnifier (1.5s)
   setTimeout(() => {
