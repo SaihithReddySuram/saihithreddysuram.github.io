@@ -373,7 +373,7 @@ h1 {
   /* General layout adjustments */
   .container {
     text-align: center;  
-    padding: 1px 0.5px;
+    padding: 1px 0px;
     justify-content: center;
     align-items: center;  
   }
@@ -382,7 +382,7 @@ h1 {
     flex-direction: column;
     gap: 1px;
     width: 90%;
-    padding: 0.5rem;  
+    padding: 0rem;  
   }
 
   .profile-section h1,
@@ -397,7 +397,7 @@ h1 {
   .left-section,
   .right-section {
     width: 100%;
-    padding: 0.5px;
+    padding: 0px;
   }
 
   .right-section {
@@ -408,7 +408,7 @@ h1 {
   .intro {
     text-align: center;
     font-size: 14px;
-    padding: 0.5px;
+    padding: 0px;
     font-size: 0.95rem;  
   }
 
