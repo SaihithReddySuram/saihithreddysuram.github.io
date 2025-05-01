@@ -170,7 +170,6 @@ function startMagnifierAnimation() {
   ];
 
   let index = 0;
-  let prevLeft = 0;
 
   function moveMagnifier() {
     const targetData = targets[index];
@@ -224,11 +223,13 @@ function startMagnifierAnimation() {
 
     }, 1000);
 
-    index = (index + 1) % targets.length;
   }
 
   moveMagnifier();
-  magnifierInterval = setInterval(moveMagnifier, 3000);
+  magnifierInterval = setInterval(() => {
+    index = (index + 1) % targets.length;
+    moveMagnifier();
+  }, 5000);
 
   const buttons = document.querySelectorAll(".button-container button");
   buttons.forEach((btn) => {
@@ -240,4 +241,5 @@ function startMagnifierAnimation() {
       }
     });
   });
+  moveMagnifier();  
 };
