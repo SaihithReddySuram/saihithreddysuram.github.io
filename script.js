@@ -154,7 +154,6 @@ window.onload = () => {
 		];
 	
 		let index = 0;
-		let prevLeft = 0;
 	
 		function moveMagnifier() {
 			const targetData = targets[index];
