@@ -110,10 +110,29 @@ function closeModal() {
     document.getElementById('modal').style.display = "none";
 }
 
+window.onclick = function (event) {
+  const modal = document.getElementById('modal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
 let magnifierInterval; // Declare globally
 let prevLeft = 0;
 
 window.onload = () => {
+  const dot = document.querySelector(".dot-line");
+  const opening = document.querySelector(".opening-animation");
+  dot.style.opacity = "1";
+  dot.style.animation = "expandToLine 1s ease-out forwards, splitLine 1s ease-out forwards 1s";  
+  opening.style.opacity = "1";
+  opening.style.animation = "fadeOutWrapper 3s ease-out forwards"; 
+  
+  sliderAnimation();
+};
+
+
+function sliderAnimation() {	
   const divider = document.querySelector(".section-divider");
   const button = document.querySelector(".button-container");
   const top = document.querySelector(".section-top");
@@ -125,7 +144,11 @@ window.onload = () => {
       el.style.animation = "slideFromTop 2s ease-out forwards";
     }
   });
+  
+  startMagnifierAnimation(); 
+};
 
+function startMagnifierAnimation() {	
   // Start magnifier animation
   const magnifier = document.getElementById("magnifier");
   const hand = document.getElementById("magnifier-hand");
