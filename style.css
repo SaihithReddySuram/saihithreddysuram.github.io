@@ -307,8 +307,7 @@ h1 {
   background-color: rgba(247, 198, 181, 0.15);
   box-shadow: 0 0 10px rgba(247, 198, 181, 0.5);
   pointer-events: none;
-  z-index: 9999;
-  opacity: 0;  
+  z-index: 9999;  
   transition: top 1s ease-in-out, left 1s ease-in-out, transform 0.5s ease-in-out;
   transform: rotate(45deg);  
 }
