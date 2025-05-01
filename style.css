@@ -9,6 +9,60 @@ body {
     color: #ffffff; /* white text */
 }
 
+#opening-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00312F;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeOutWrapper 4s forwards;
+  animation-delay: 3s;
+}
+
+#dot-line {
+  width: 10px;
+  height: 10px;
+  background-color: #f7c6b5;
+  border-radius: 50%;
+  animation: expandToLine 1s ease-out forwards, splitLine 1s ease-out forwards 1s;
+}
+
+@keyframes expandToLine {
+  0% {
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    width: 80%;
+    height: 3px;
+    border-radius: 2px;
+  }
+}
+
+@keyframes splitLine {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutWrapper {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .container {
     text-align: center;
     padding: 5px;
@@ -254,6 +308,8 @@ h1 {
   box-shadow: 0 0 10px rgba(247, 198, 181, 0.5);
   pointer-events: none;
   z-index: 9999;
+  display: none;
+  opacity: 0;  
   transition: top 1s ease-in-out, left 1s ease-in-out, transform 0.5s ease-in-out;
   transform: rotate(45deg);  
 }
@@ -288,59 +344,6 @@ h1 {
   text-align: center;
 }
 
-#opening-animation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #00312F;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  animation: fadeOutWrapper 4s forwards;
-  animation-delay: 3s;
-}
-
-#dot-line {
-  width: 10px;
-  height: 10px;
-  background-color: #f7c6b5;
-  border-radius: 50%;
-  animation: expandToLine 1s ease-out forwards, splitLine 1s ease-out forwards 1s;
-}
-
-@keyframes expandToLine {
-  0% {
-    width: 10px;
-    height: 10px;
-  }
-  100% {
-    width: 80%;
-    height: 3px;
-    border-radius: 2px;
-  }
-}
-
-@keyframes splitLine {
-  0% {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleX(0.1);
-    opacity: 0;
-  }
-}
-
-@keyframes fadeOutWrapper {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 
 
 @media (max-width: 768px) {
