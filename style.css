@@ -364,7 +364,7 @@ h1 {
   /* General layout adjustments */
   .container {
     text-align: center;  
-    padding: 1px 1px;
+    padding: 1px 0.5px;
     justify-content: center;
     align-items: center;  
   }
@@ -378,18 +378,18 @@ h1 {
   .left-section,
   .right-section {
     width: 100%;
-    padding: 1px;
+    padding: 0.5px;
   }
 
   .right-section {
     border-left: none;
-    padding-top: 1px;
+    padding-top: 0.5px;
   }
 
   .intro {
     text-align: center;
     font-size: 14px;
-    padding: 1px;
+    padding: 0.5px;
   }
 
   /* Adjust headings and tagline */
