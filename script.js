@@ -114,17 +114,18 @@ let magnifierInterval; // Declare globally
 let prevLeft = 0;
 
 window.onload = () => {
-  const divider = document.querySelector(".section-divider");
-  const button = document.querySelector(".button-container");
-  const top = document.querySelector(".section-top");
-
   // Apply animations immediately
-  [divider, button, top].forEach(el => {
-    if (el) {
-      el.style.opacity = "1";
-      el.style.animation = "slideFromTop 8s ease-out forwards";
-    }
-  });
+  const divider = document.querySelector(".section-divider");
+  divider.style.opacity = "1";
+  divider.style.animation = "slideFromTop 2s ease-out forwards";
+
+  const button = document.querySelector(".button-container");
+  button.style.opacity = "1";
+  button.style.animation = "slideFromTop 2s ease-out forwards";
+
+  const top = document.querySelector(".section-top");
+  top.style.opacity = "1";
+  top.style.animation = "slideUp 2s ease-out forwards"; 
 
   // Start magnifier animation
   const magnifier = document.getElementById("magnifier");
