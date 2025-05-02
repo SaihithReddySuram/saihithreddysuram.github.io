@@ -369,7 +369,7 @@ h1 {
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   /* General layout adjustments */
   .container {
     text-align: center;  
@@ -381,7 +381,7 @@ h1 {
   .profile-section {
     flex-direction: column;
     gap: 1px;
-    width: 90%;
+    width: 95%;
     padding: 0rem; 
     box-sizing: border-box;
     word-wrap: break-word;
