@@ -381,7 +381,7 @@ h1 {
   .profile-section {
     flex-direction: column;
     gap: 1px;
-    width: 102%;
+    width: 100%;
     padding: 0rem; 
     box-sizing: border-box;
     word-wrap: break-word;
@@ -434,9 +434,9 @@ h1 {
   }
 
   .intro-image img {
-    height: 150px;
+    height: 180px;
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
   }
 
    .button-container {
