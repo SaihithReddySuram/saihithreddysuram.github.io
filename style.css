@@ -381,7 +381,7 @@ h1 {
   .profile-section {
     flex-direction: column;
     gap: 1px;
-    width: 100%;
+    width: 102%;
     padding: 0rem; 
     box-sizing: border-box;
     word-wrap: break-word;
