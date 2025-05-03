@@ -353,18 +353,17 @@ h1 {
 
 #magnifier-message {
   position: absolute;
-  background-color: #00312F;
-  color: #f7c6b5;
-  padding: 10px 20px;
+  bottom: -30px; /* relative to magnifier */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000000cc;
+  color: white;
+  padding: 5px 10px;
   border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 9999;
   opacity: 0;
-  transition: opacity 0.5s, top 0.5s, left 0.5s;
-  min-width: 200px;
-  text-align: center;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 
