@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
           messageBox.textContent = targetData.message;
           messageBox.style.opacity = 1;
 	  messageBox.style.top = `${top + 50}px`;
-	  messageBox.style.left = `${left + 20}px`;
+	  messageBox.style.left = `${left}px`;
           messageBox.style.animation = "expandMsg 0.5s ease-in-out forwards"; 		
 	  messageBox.style.transform = "translate(-50%, -50%)";  
 
