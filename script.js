@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const introTextRect = introText.getBoundingClientRect();
 		const textTop = introTextRect.top + scrollTop;
 
-		messageBox.style.top = `${textTop - 25}px`;
+		messageBox.style.top = `${textTop}px`;
 		messageBox.style.left = `50%`;
 		messageBox.style.transform = `translateX(-50%)`;
 	  } else if (target.classList.contains("intro-image")) {
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const introImageRect = introImage.getBoundingClientRect();
 		const imageBottom = introImageRect.bottom + scrollTop;
 				
-		messageBox.style.top = `${imageBottom + 25}px`;
+		messageBox.style.top = `${imageBottom}px`;
 		messageBox.style.left = `50%`;
 		messageBox.style.transform = `translateX(-50%)`;
 	  }  
