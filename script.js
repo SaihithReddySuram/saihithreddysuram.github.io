@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const introImageRect = introImage.getBoundingClientRect();
 		const imageTop = introImageRect.top + scrollTop;
 				
-		messageBox.style.top = `${imageTop + 10}px`;
+		messageBox.style.top = `${imageTop + 50}px`;
 		messageBox.style.left = `${introImageRect.left + scrollLeft + introImageRect.width / 2 - messageBox.offsetWidth / 2}px`;
 		messageBox.style.transform = `translateX(-50%)`;
 	  }  
