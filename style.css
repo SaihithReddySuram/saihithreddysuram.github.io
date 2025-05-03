@@ -352,20 +352,20 @@ h1 {
 }
 
 #magnifier-message {
-  position: absolute;
-  bottom: -30px; /* relative to magnifier */
-  left: 50%;
-  transform: translateX(-50%);
-  background: #000000cc;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-  white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color: black;
+    background: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
-
 
 
 @media screen and (max-width: 738px) {
