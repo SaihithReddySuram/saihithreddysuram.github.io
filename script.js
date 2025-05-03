@@ -204,16 +204,16 @@ document.addEventListener("DOMContentLoaded", () => {
 		const introTextRect = introText.getBoundingClientRect();
 		const textTop = introTextRect.top + scrollTop;
 
-		messageBox.style.top = `${textTop}px`;
-		messageBox.style.left = `50%`;
+		messageBox.style.top = `${textTop + 10}px`;
+		messageBox.style.left = `${introTextRect.left + scrollLeft + introTextRect.width / 2 - messageBox.offsetWidth / 2}px`;
 		messageBox.style.transform = `translateX(-50%)`;
 	  } else if (target.classList.contains("intro-image")) {
 		const introImage = document.querySelector(".intro-image");
 		const introImageRect = introImage.getBoundingClientRect();
-		const imageBottom = introImageRect.bottom + scrollTop;
+		const imageTop = introImageRect.top + scrollTop;
 				
-		messageBox.style.top = `${imageBottom}px`;
-		messageBox.style.left = `50%`;
+		messageBox.style.top = `${imageTop + 10}px`;
+		messageBox.style.left = `${introImageRect.left + scrollLeft + introImageRect.width / 2 - messageBox.offsetWidth / 2}px`;
 		messageBox.style.transform = `translateX(-50%)`;
 	  }  
 
