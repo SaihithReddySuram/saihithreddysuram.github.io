@@ -193,28 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
           messageBox.textContent = targetData.message;
           messageBox.style.opacity = 1;
 
-          if (target.classList.contains('profile-pic')) {
-            // Special positioning for profile-pic (underneath name & tag)
-            messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
-            messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
-            messageBox.style.transform = `translateX(0)`;
-          } else if (target.classList.contains("intro") || target.classList.contains("intro-image")) {
-              // Position between intro-image and intro
-              const introImage = document.querySelector(".intro-image");
-              const introText = document.querySelector(".intro");
-
-              const introImageRect = introImage.getBoundingClientRect();
-              const introTextRect = introText.getBoundingClientRect();
-
-              const imageBottom = introImageRect.bottom + scrollTop;
-              const textTop = introTextRect.top + scrollTop;
-              const midpoint = (imageBottom + textTop) / 2;
-
-              messageBox.style.top = `${midpoint - 25}px`;
-              messageBox.style.left = `50%`;
-              messageBox.style.transform = `translateX(-50%)`;
-          }
-
           // Hide message after 2 seconds
           setTimeout(() => {
             messageBox.style.opacity = 0;
