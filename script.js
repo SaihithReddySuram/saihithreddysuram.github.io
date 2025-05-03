@@ -192,8 +192,9 @@ document.addEventListener("DOMContentLoaded", () => {
           // Show the message
           messageBox.textContent = targetData.message;
           messageBox.style.opacity = 1;
-	  messageBox.style.top = `${top + 25}px`;
+	  messageBox.style.top = `${top + 50}px`;
 	  messageBox.style.left = `${left + 25}px`;
+          messageBox.style.animation = "expandProfile 1s ease-out forwards"; 		
 	  messageBox.style.transform = "translate(-50%, -50%)";  
 
           // Hide message after 2 seconds
