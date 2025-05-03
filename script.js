@@ -192,30 +192,9 @@ document.addEventListener("DOMContentLoaded", () => {
           // Show the message
           messageBox.textContent = targetData.message;
           messageBox.style.opacity = 1;
-
-          if (target.classList.contains('profile-pic')) {
-		// Special positioning for profile-pic (underneath name & tag)
-		messageBox.style.top = `${rect.bottom + scrollTop + 10}px`; 
-		messageBox.style.left = `${rect.left + scrollLeft + rect.width / 2 - messageBox.offsetWidth / 2}px`;
-		messageBox.style.transform = `translateX(0)`;
-	  } else if (target.classList.contains("intro")) {
-              // Position between intro-image and intro
-		const introText = document.querySelector(".intro");
-		const introTextRect = introText.getBoundingClientRect();
-		const textTop = introTextRect.top + scrollTop;
-
-		messageBox.style.top = `${textTop + 10}px`;
-		messageBox.style.left = `${introTextRect.left + scrollLeft + introTextRect.width / 2 - messageBox.offsetWidth / 2}px`;
-		messageBox.style.transform = `translateX(-50%)`;
-	  } else if (target.classList.contains("intro-image")) {
-		const introImage = document.querySelector(".intro-image");
-		const introImageRect = introImage.getBoundingClientRect();
-		const imageTop = introImageRect.top + scrollTop;
-				
-		messageBox.style.top = `${imageTop + 50}px`;
-		messageBox.style.left = `${introImageRect.left + scrollLeft + introImageRect.width / 2}px`;
-		messageBox.style.transform = `translateX(-50%)`;
-	  }  
+	  messageBox.style.top = "50%";
+	  messageBox.style.left = "50%";
+	  messageBox.style.transform = "translate(-50%, -50%)";  
 
           // Hide message after 2 seconds
           setTimeout(() => {
