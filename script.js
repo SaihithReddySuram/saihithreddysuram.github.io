@@ -193,6 +193,12 @@ document.addEventListener("DOMContentLoaded", () => {
           messageBox.textContent = targetData.message;
           messageBox.style.opacity = 1;
 
+          if (target.classList.contains('profile-pic')) {
+            messageBox.style.top = '100%'; // position it below the magnifier
+          } else {
+            messageBox.style.top = '100%';
+          }  
+
           // Hide message after 2 seconds
           setTimeout(() => {
             messageBox.style.opacity = 0;
