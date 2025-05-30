@@ -33,7 +33,7 @@ const data = {
             • Extracting, structuring, and storing data from 45+ meta-analysis papers into a vector database.<br>
             • Generating embeddings with Hugging Face models and deploying a Local Language Model (LLM) for querying research insights.<br><br>
 
-            <strong>ZS Associates India Pvt Ltd (Dec 2021 – Aug 2023)</strong><br>
+            <strong>ZS Associates India Pvt Ltd (Dec 2020 – Aug 2023)</strong><br>
             Business Technology solution Associate (Pune, India)<br>
             • Built scalable and reliable data systems using Databricks for optimized data ingestion, processing, and analysis.<br>
             • Designed and developed data extraction, transformation, and loading (ETL) pipelines.<br>
