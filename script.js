@@ -40,6 +40,12 @@ const data = {
             • Monitored workflows ensuring smooth continuous data processing.<br>
             • Led Customer Insights specialty pharmacy project, optimizing datasets for enterprise agility.<br>
             • Developed customized dashboards for GSK and BMS clients, integrating SQL backend processing and Excel-based KPI tracking.
+
+     	    <strong>Great Learning  (2020 – 2021)</strong><br>
+            Data Science Analyst<br>
+            • Learned, Analyzed and processed data by cleaning, transforming, and structuring datasets using SQL and Python (Pandas, NumPy) to prepare for analytics.
+	    • Built and evaluated statistical models (A/B Testing) and machine learning algorithms to identify sales trends and predict future sales patterns for strategic decision-making.
+
         </p>
     `,
     projects: `
